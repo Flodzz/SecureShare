@@ -36,3 +36,26 @@ nav{
 .nav-links a:hover{
     background-color: #C1121F;
 }
+footer{
+    background-color: #344E41;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.footer-content img{
+    height: 50px;
+    width: auto;
+}
+.footer-content p{
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+
+}
