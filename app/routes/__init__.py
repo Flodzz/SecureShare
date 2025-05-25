@@ -3,7 +3,7 @@ from .auth_routes import auth_bp
 from .file_routes import file_bp
 
 
-# Register Blueprints
+# Function to register all blueprints
 def register_blueprints(app):
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
