@@ -3,10 +3,26 @@ from datetime import datetime
 
 
 class File(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    filename = db.Column(db.String(255), nullable=False)
-    upload_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    file_path = db.Column(db.String(512), nullable=False)
+    file_id = db.Column(db.Serial, primary_key=True)
+    uploaded_by = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
+    original_name = db.Column(db.String(255), nullable=False)
+    stored_name = db.Column(db.String(255), nullable=False)
+    size_bytes = db.Column(db.Integer, nullable=False)
+    mime_type = db.Column(db.String(255), nullable=False)
+    encrypted = db.Column(db.Boolean, nullable=False)
+    uploaded_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
     def __repr__(self):
         return f'<File {self.filename}>'
+
+
+class FileShares(db.Model):
+    share_id = db.Column(db.UUID, primary_key=True)
+    file_id = db.Column(db.Integer, db.ForeignKey('file.file_id'), nullable=False)
+    shared_by = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
+    shared_with = db.Column(db.String(255), nullable=False)
+    expires_at = db.Column(db.DateTime, nullable=False)
+    max_downloads = db.Column(db.Integer, nullable=False)
+    password_protected = db.Column(db.Boolean, nullable=False)
+    access_password_hash = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
