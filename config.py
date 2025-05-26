@@ -7,6 +7,5 @@ DB_DIR.mkdir(exist_ok=True)
 
 
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY", "dev-key-please-change")
-    SQLALCHEMY_DATABASE_URI = f"sqlite:///{DB_DIR}/app.db"
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
