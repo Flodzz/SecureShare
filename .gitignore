@@ -1,2 +1,7 @@
 .idea/
+.venv/
+__pycache__/
+instance/
+
 .env
+.DS_Store
