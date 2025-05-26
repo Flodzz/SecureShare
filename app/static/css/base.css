@@ -37,7 +37,7 @@ nav{
     margin-right: 20px;
 }
 .nav-links a:hover{
-    background-color: #C1121F;
+    background-color: #588157;
 }
 footer{
     background-color: #344E41;
@@ -67,7 +67,7 @@ footer{
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #C1121F;
+    background-color: #588157;
     min-width: 180px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
@@ -87,5 +87,5 @@ footer{
 }
 
 .dropdown-content a:hover {
-    background-color: #C1121F;
+    background-color: #A3B18A;
 }
