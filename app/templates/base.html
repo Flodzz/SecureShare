@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app/static/css/base.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <title>SecureShare</title>
 </head>
 <body>
     <nav>
         <div class="nav-brand">
-            <img src="/assets/logos/SecureShareWhiteTransparent.png" alt="SecureShare" />
+            <img src="{{ url_for('static', filename='assets/logos/SecureShareWhiteTransparent.png') }}" alt="SecureShare" />
         </div>
         <ul class="nav-links">
             <li><a href="/index">Transfer</a></li>
             <li><a href="#">Log In</a></li>
             <!-- if account is authenticated -->
-            <li><a href="#">Account</a></li>
+            <li class="account" aria-haspopup="true" aria-expanded="false">
+                <a href="#" aria-haspopup="true" aria-controls="account-dropdown" aria-expanded="false">Account ▼</a>
+                <div class="dropdown-content" id="account-dropdown" role="menu" aria-label="Account menu">
+                    <a href="#" role="menuitem" id="accountsettings-link">Account Settings</a>
+                    <a href="/logout" role="menuitem">Log Out</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <footer>
         <div class="footer-content">
-            <img src="/assets/logos/SecureShareWhiteTransparent.png" alt="SecureShare" />
+            <img src="{{ url_for('static', filename='assets/logos/SecureShareWhiteTransparent.png') }}" alt="SecureShare" />
             <p>&copy; 2025 SecureShare. All Rights Reserved</p>
         </div>
     </footer>
+    <script src="{{ url_for('static', filename='javascript/base.js') }}"></script>
 </body>
 </html>
