@@ -3,6 +3,8 @@ from datetime import datetime
 
 
 class File(db.Model):
+    __tablename__ = 'files'
+
     file_id = db.Column(db.Serial, primary_key=True)
     uploaded_by = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
     original_name = db.Column(db.String(255), nullable=False)
@@ -17,6 +19,8 @@ class File(db.Model):
 
 
 class FileShares(db.Model):
+    __tablename__ = 'file_shares'
+
     share_id = db.Column(db.UUID, primary_key=True)
     file_id = db.Column(db.Integer, db.ForeignKey('file.file_id'), nullable=False)
     shared_by = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
