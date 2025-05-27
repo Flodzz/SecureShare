@@ -5,8 +5,8 @@ from datetime import datetime
 class File(db.Model):
     __tablename__ = 'files'
 
-    file_id = db.Column(db.Serial, primary_key=True)
-    uploaded_by = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
+    file_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    uploaded_by = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     original_name = db.Column(db.String(255), nullable=False)
     stored_name = db.Column(db.String(255), nullable=False)
     size_bytes = db.Column(db.Integer, nullable=False)
@@ -22,8 +22,8 @@ class FileShares(db.Model):
     __tablename__ = 'file_shares'
 
     share_id = db.Column(db.UUID, primary_key=True)
-    file_id = db.Column(db.Integer, db.ForeignKey('file.file_id'), nullable=False)
-    shared_by = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
+    file_id = db.Column(db.Integer, db.ForeignKey('files.file_id'), nullable=False)
+    shared_by = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     shared_with = db.Column(db.String(255), nullable=False)
     expires_at = db.Column(db.DateTime, nullable=False)
     max_downloads = db.Column(db.Integer, nullable=False)
