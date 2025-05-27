@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 nav{
     background-color : #344E41;
     display: flex;
@@ -10,12 +11,21 @@ nav{
     height: 80px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+h1 {
+    font-size: 70px;
+    font-weight: 600;
+    color: #344E41;
+    font-family: 'Zain', sans-serif;
+}
+
 .nav-brand img{
     height: 60px;
     width: auto;
     display: block;
     margin-left: 20px;
 }
+
 .nav-links{
     list-style: none;
     display: flex;
@@ -23,9 +33,11 @@ nav{
     padding: 0;
     gap: 20px;
 }
+
 .nav-links li.account {
     position: relative;
 }
+
 .nav-links a{
     color: white;
     text-decoration: none;
@@ -36,9 +48,11 @@ nav{
     display: inline-block;
     margin-right: 20px;
 }
+
 .nav-links a:hover{
     background-color: #C1121F;
 }
+
 footer{
     background-color: #344E41;
     color: white;
@@ -46,22 +60,26 @@ footer{
     text-align: center;
     margin-top: 50px;
 }
+
 .footer-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
+
 .footer-content img{
     height: 50px;
     width: auto;
 }
+
 .footer-content p{
     margin: 0;
     font-size: 0.9rem;
     font-weight: 400;
 
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -76,6 +94,7 @@ footer{
     padding: 5px 0;
     gap: 5px;
 }
+
 .dropdown-content a {
     color: white;
     padding: 12px 20px;
